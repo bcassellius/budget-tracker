@@ -11,7 +11,10 @@ fetch("/api/transaction")
   .then(data => {
     // save db data on global variable
     console.log("before", transactions);
-    transactions = data;
+    var isArr = data instanceof Array;
+    if (isArr) {
+      transactions = data;
+    }
     console.log("after", transactions);
 
     populateTotal();
