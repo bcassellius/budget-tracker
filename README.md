@@ -21,7 +21,10 @@ This app uses node.js and is connected to the noSQL database with mongoose. The 
 
 <a name='usage'></a>
 ## Usage
-The deployed app can be found at https://nameless-fortress-29034.herokuapp.com/.  
+The deployed app can be found at https://nameless-fortress-29034.herokuapp.com/. It can be used as a live website or downloaded as a PWA.  
+
+![image](https://user-images.githubusercontent.com/83994997/135764936-5509d19a-ca93-40d8-ba1b-7417f3a83b89.png)
+
 To initiate the app from your local computer, navigate in your terminal to where you have cloned the repository and type `npm start`.
 
 <a name='license'></a>
