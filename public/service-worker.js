@@ -8,18 +8,18 @@ const FILES_TO_CACHE = [
     '/css/styles.css',
     '/js/index.js',
     '/js/ibd.js',
-    '/icons/icon-72X72.png',
-    '/icons/icon-96X96.png',
-    '/icons/icon-128X128.png',
-    '/icons/icon-144X144.png',
-    '/icons/icon-152X152.png',
-    '/icons/icon-192X192.png',
-    '/icons/icon-384X384.png',
-    '/icons/icon-512X512.png'
+    '/icons/icon-72x72.png',
+    '/icons/icon-96x96.png',
+    '/icons/icon-128x128.png',
+    '/icons/icon-144x144.png',
+    '/icons/icon-152x152.png',
+    '/icons/icon-192x192.png',
+    '/icons/icon-384x384.png',
+    '/icons/icon-512x512.png'
 ]
 
 self.addEventListener('install', function (e) {
-    console.log('entered install eventListener');
+    // console.log('entered install eventListener');
     e.waitUntil(
         caches.open(CACHE_NAME).then(function (cache) {
             console.log('installing cache : ' + CACHE_NAME)
@@ -29,8 +29,7 @@ self.addEventListener('install', function (e) {
 });
 
 self.addEventListener('activate', function (e) {
-    console.log('entered activate eventListener');
-
+    // console.log('entered activate eventListener');
     e.waitUntil(
         caches.keys().then(function (keyList) {
             let cacheKeeplist = keyList.filter(function (key) {
@@ -50,14 +49,14 @@ self.addEventListener('activate', function (e) {
 });
 
 self.addEventListener('fetch', function (e) {
-    console.log('fetch request : ' + e.request.url)
+    // console.log('fetch request : ' + e.request.url)
     e.respondWith(
         caches.match(e.request).then(function (request) {
             if (request) {
-                console.log('responding with cache : ' + e.request.url)
+                // console.log('responding with cache : ' + e.request.url)
                 return request
             } else {
-                console.log('file is not cached, fetching : ' + e.request.url)
+                // console.log('file is not cached, fetching : ' + e.request.url)
                 return fetch(e.request)
             }
         })

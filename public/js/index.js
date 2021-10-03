@@ -1,6 +1,3 @@
-
-
-
 let transactions = [];
 let myChart;
 
@@ -10,12 +7,12 @@ fetch("/api/transaction")
   })
   .then(data => {
     // save db data on global variable
-    console.log("before", transactions);
+    // console.log("before", transactions);
     var isArr = data instanceof Array;
     if (isArr) {
       transactions = data;
     }
-    console.log("after", transactions);
+    // console.log("after", transactions);
 
     populateTotal();
     populateTable();
